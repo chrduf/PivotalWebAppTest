@@ -1,0 +1,10 @@
+﻿---
+applications:
+- name: PivotalWebAppTest-Linux-sc
+  random-route: false
+  health-check-type: none
+  memory: 512M
+  stack: cflinuxfs2
+  buildpack: dotnet_core_buildpack
+  env:
+    ASPNETCORE_ENVIRONMENT: Production

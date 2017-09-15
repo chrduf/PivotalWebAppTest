@@ -1,12 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Logging;
 
 namespace PivotalWebAppTest
 {
@@ -19,7 +14,27 @@ namespace PivotalWebAppTest
 
         public static IWebHost BuildWebHost(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
-                .UseStartup<Startup>()
+            .UseUrls(GetServerUrls(args))    
+            .UseStartup<Startup>()
                 .Build();
+
+        /// <summary>
+        /// Update the server URLs from the command line. 
+        /// Required when starting a Pivotal container
+        /// </summary>
+        /// <param name="args"></param>
+        /// <returns></returns>
+        private static string[] GetServerUrls(IReadOnlyList<string> args)
+        {
+            var urls = new List<string>();
+            for (var i = 0; i < args.Count; i++)
+            {
+                if ("--server.urls".Equals(args[i], StringComparison.OrdinalIgnoreCase))
+                {
+                    urls.Add(args[i + 1]);
+                }
+            }
+            return urls.ToArray();
+        }
     }
 }
