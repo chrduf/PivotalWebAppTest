@@ -11,7 +11,7 @@ Two methods of deployment are possible with .NETCore
 
 ## Scenario 1 - Self-Contained ASP.NETCore2.0 deployment targeting Windows2012R2
 
-**Buildpack:** [HWC Buildpack](https://github.com/cloudfoundry/hwc-buildpack/releases) v2.3.9 (Sept 8, 2017)
+**Buildpack:** [HWC Buildpack](https://github.com/cloudfoundry/hwc-buildpack/releases) v2.3.2 (March 15, 2017)
 
 **Stack:** Windows2012R2
 
@@ -37,7 +37,7 @@ cf push -f manifest-windows-sc.yml -p .\bin\publish-windows-sc
 
 ## Scenario 2 - Self-Contained ASP.NETCore2.0 deployment targeting cflinuxfs2
 
-**Buildpack:** [Dotnet Core Buildpack](https://github.com/cloudfoundry/dotnet-core-buildpack/releases) v1.0.26 (Sept 8, 2017)
+**Buildpack:** [Dotnet Core Buildpack](https://github.com/cloudfoundry/dotnet-core-buildpack/releases) v1.0.13 (March 15, 2017)
 
 **Stack:** cflinuxfs2
 
@@ -64,7 +64,7 @@ cf push -f manifest-linux-sc.yml -p .\bin\publish-linux-sc
 
 ## Scenario 3 - Framework-Dependent ASP.NETCore2.0 deployment targeting Windows2012R2
 
-**Buildpack:** [HWC Buildpack](https://github.com/cloudfoundry/hwc-buildpack/releases) v2.3.9 (Sept 8, 2017)
+**Buildpack:** [HWC Buildpack](https://github.com/cloudfoundry/hwc-buildpack/releases) v2.3.2 (March 15, 2017)
 
 **Stack:** Windows2012R2
 
@@ -164,7 +164,7 @@ CF error log:
 
 ## Scenario 4 - Framework-Dependent ASP.NETCore2.0 deployment targeting cflinuxfs2
 
-**Buildpack:** [Dotnet Core Buildpack](https://github.com/cloudfoundry/dotnet-core-buildpack/releases) v1.0.26 (Sept 8, 2017)
+**Buildpack:** [Dotnet Core Buildpack](https://github.com/cloudfoundry/dotnet-core-buildpack/releases) v1.0.13 (March 15, 2017)
 
 **Stack:** cflinuxfs2
 
